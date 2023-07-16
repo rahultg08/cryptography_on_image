@@ -198,7 +198,6 @@ def decrypt(ciphername, password):
         messagebox.showerror("Error", str(e))
 
 
-
 # ----------------- Functions for UI ---------------------#
 
 # def open_file():
