@@ -17,3 +17,27 @@ OR Cryptodome\
 PIL\
 tkinter\
 Tkinter [linux command: sudo apt-get install python-tk]
+
+## Client-Server architecture using Javascript
+Client requesting encryption of the image can upload the image, and this gets the client encrypted image downloaded in the defined folder, json formatted encypted image path, Initialization Value(IV) which needs is used by the server while decrypting. The server does the required function of encryption.
+
+1. Run index.html\
+Run using "Open with live server"\
+This loads the frontend with upload functionality
+2. Command to run backend via terminal: `node index.js`\
+This loads the backend\
+3. Upload the file, click UPLOAD
+4. Get and copy the json formatted encypted image path, Initialization Value(IV)
+5. For decryption, run the backend and start Postman.
+6. Specify the URL as "http://localhost:3000/download"
+7. Set the request as GET
+8. Request is done through body, so set body as "raw" and format as "JSON"
+9. In he body place the copied json message got after encryption
+10. Click on SEND
+11. You will get the decrypted image downloaded and shown as output
+
+## Cryptography using Javascript Functions
+
+**NOTE:** Image that is to be encrypted is already placed in the file. The file address is passed and image is read while encrypting\
+Run `node using_fns.js` on terminal\
+Get the encrypted and decrypted image
