@@ -5,13 +5,14 @@ const crypto = require('crypto');
 // Read the image file
 const image = fs.readFileSync('Panda.png'); // Replace 'image.jpg' with the path to your image file
 
-// Define the encryption and decryption functions
+// Define the encryption function
 function encryptImage(image, key) {
   const aesCtr = new aesjs.ModeOfOperation.ctr(key);
   const encryptedBytes = aesCtr.encrypt(image);
   return aesjs.utils.hex.fromBytes(encryptedBytes);
 }
 
+// Define the decryption function
 function decryptImage(encryptedImage, key) {
   const aesCtr = new aesjs.ModeOfOperation.ctr(key);
   const encryptedBytes = aesjs.utils.hex.toBytes(encryptedImage);
